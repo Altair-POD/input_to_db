@@ -6,12 +6,10 @@ just a UI for facile input in the database
 from the parent directory just run this command:
 ```
 npm install
-
 ```
 
 after acquiring all the modules just start the server with,
 ```
 npm run dev
-
 ```
 
