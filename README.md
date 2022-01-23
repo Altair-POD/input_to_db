@@ -13,3 +13,5 @@ after acquiring all the modules just start the server with,
 npm run dev
 ```
 
+select2 for multiple search selection
+

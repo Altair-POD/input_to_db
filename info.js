@@ -23,6 +23,11 @@ const infoSchema = new mongoose.Schema({
         lowercase: true
     },
 
+    facilities: {
+        type: [String],
+        required: true
+    },
+
     img1: {
         type: String,
         required: true,

@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <title>Input Taker</title>
   </head>
@@ -57,10 +60,11 @@
                     <input type="file" name="img2" accept="image/*">
                 </div>
 
-
-                <br>
-                <br>
-                <br>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Facilities</label>
+                    <div class="col-sm-10">
+                    <select class="prompt" name="facilities"></select>
+                </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -68,6 +72,27 @@
         </div>
 
     </div>
+
+    <script>
+        var content = [
+            {id: "Wifi", text: "Wifi"},
+            {id: "Balcony", text: "Balcony"},
+            {id: "Geyser", text: "Geyser"},
+            {id: "AC", text: "AC"},
+            {id: "TV", text: "TV"},
+            {id: "Oven", text: "Oven"}
+        ];
+
+        $(".prompt").select2({
+            data: content,
+            //minimumInputLength: 1,
+            width: '100%',
+            multiple: true,
+            placeholder: "Enter the facilities",
+            //allowClear: true,
+            //tags: true 
+        });
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
