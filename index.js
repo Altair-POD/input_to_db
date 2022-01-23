@@ -53,40 +53,6 @@ app.post('/add', async (req, res)=>{
 
 });
 
-app.post('/add', async (req, res)=>{
-
-    if(req.files){
-        const { location, city, rooms, price } = req.body;
-        const folderName = './uploads/user-'+id_info++;
-
-        try {
-            if(!fs.existsSync(folderName)){
-                fs.mkdirSync(folderName);
-            }
-        } catch(err) {
-            console.log(err);
-        }
-
-        const file1 = req.files.img1;
-        const file2 = req.files.img2;
-
-        const img1 = folderName+'/'+'img1';
-        const img2 = folderName+'/'+'img2';
-
-        file1.mv(img1);
-        file2.mv(img2);
-
-        try{
-            const user = await infos.create({ location, city, rooms, price, img1, img2 });
-        } catch(err){
-            console.log(err)
-        }
-
-    }
-
-    res.redirect('/');
-
-});
 
 mongoose.connect(process.env.MONGODB_URI, { 
     useNewUrlParser: true, 
